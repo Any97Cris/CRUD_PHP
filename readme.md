@@ -12,13 +12,14 @@
     => Opção Deletar aparece uma alert(caixa de mensagem) para a verificação se deseja realmente excluir.
 
 
-<p>=> Tela Cadastrar:
+<p>=> Tela Cadastrar:</p>
     => Possui os campos nome, sobrenome e email
+    <br>
     => Botões adicionar e menu(retorna a pagina principal)
-</p>
 
-<p>
-=> Tela Editar
+
+<p>=> Tela Editar</p>
     => Possui os campos nome, sobrenome e email
+    <br>
     => Botões editar e menu(retorna a pagina principal)
-</p>
+
