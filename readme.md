@@ -1,25 +1,22 @@
 # Projeto CRUD(Create Read Update Delete - Criar Ler/Listar Editar Deletar) 
 
 ## Nesse projeto é possivel cadastrar, listar, editar e deletar o usuario
-
-<p>=> Tela Principal:</p>
+```
+=> Tela Principal:
     => Botão Adionar Usuário;
-    <br>
     => Tabela que lista usuários
-    <br>
     => Em Ações é possivel Editar e Deletar o usuário
-    <br>
     => Opção Deletar aparece uma alert(caixa de mensagem) para a verificação se deseja realmente excluir.
-    <hr>
+```
 
-<p>=> Tela Cadastrar:</p>
+```
+=> Tela Cadastrar:
     => Possui os campos nome, sobrenome e email
-    <br>
     => Botões adicionar e menu(retorna a pagina principal)
-    <hr>
+```
 
-<p>=> Tela Editar</p>
+```
+=> Tela Editar
     => Possui os campos nome, sobrenome e email
-    <br>
     => Botões editar e menu(retorna a pagina principal)
-
+```
