@@ -1,10 +1,10 @@
 <?php
 require_once 'database.php';
-require_once 'dao/UsuarioDAOMySQL.php';
+require_once 'dao/UsuarioDAO.php';
 require_once 'model/Usuario.php';
 
 
-$usuarioDAO = new UsuarioDAOMySQL($pdo);
+$usuarioDAO = new UsuarioDAU($pdo);
 $lista = $usuarioDAO->findAll();
 
 
@@ -24,7 +24,6 @@ $lista = $usuarioDAO->findAll();
         <a href="adicionar.php" class="btn btn-dark mt-5 mb-5">ADICIONAR USUÁRIO</a>
         <table class="table table-light table-striped text-center">
             <tr>
-                <th>ID</th>
                 <th>NOME</th>
                 <th>SOBRENOME</th>
                 <th>EMAIL</th>
@@ -32,7 +31,6 @@ $lista = $usuarioDAO->findAll();
             </tr>
             <?php foreach ($lista as $usuario) : ?>
                 <tr>
-                    <th><?= $usuario->getId(); ?></th>
                     <th><?= $usuario->getNome(); ?></th>
                     <th><?= $usuario->getSobrenome(); ?></th>
                     <th><?= $usuario->getEmail(); ?></th>
