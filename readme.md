@@ -16,7 +16,7 @@
     => Possui os campos nome, sobrenome e email
     <br>
     => Botões adicionar e menu(retorna a pagina principal)
-    <br>
+    <hr>
 
 <p>=> Tela Editar</p>
     => Possui os campos nome, sobrenome e email
