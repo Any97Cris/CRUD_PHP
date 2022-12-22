@@ -10,7 +10,7 @@
     => Em Ações é possivel Editar e Deletar o usuário
     <br>
     => Opção Deletar aparece uma alert(caixa de mensagem) para a verificação se deseja realmente excluir.
-    <br>
+    <hr>
 
 <p>=> Tela Cadastrar:</p>
     => Possui os campos nome, sobrenome e email
