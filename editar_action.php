@@ -7,15 +7,19 @@ $usuarioDAO = new UsuarioDAU($pdo);
 
 $id = filter_input(INPUT_POST, 'id');
 $name = filter_input(INPUT_POST, 'nome');
-$sobrenome = filter_input(INPUT_POST, 'sobrenome');
+$login = filter_input(INPUT_POST, 'login');
 $email = filter_input(INPUT_POST, 'email');
+$telefone = filter_input(INPUT_POST, 'telefone');
+$status = filter_input(INPUT_POST, 'status');
 
-if ($name && $sobrenome && $email) {
+if ($name && $login && $email) {
     $usuario = new Usuario();
     $usuario->setId($id);
     $usuario->setNome($name);
-    $usuario->setSobrenome($sobrenome);
+    $usuario->setLogin($login);
     $usuario->setEmail($email);
+    $usuario->setTelefone($telefone);
+    $usuario->setStatus($status);
 
     $usuarioDAO->update($usuario);
 
