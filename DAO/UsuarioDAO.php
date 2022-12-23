@@ -81,7 +81,7 @@ class UsuarioDAU implements usuarioDAO
             $u = new Usuario();
             $u->setId($data['id']);
             $u->setNome($data['nome']);
-            $u->setLogin($data['sobrenome']);
+            $u->setLogin($data['login']);
             $u->setEmail($data['email']);
             $u->setTelefone($data['telefone']);
             $u->setStatus($data['status']);
