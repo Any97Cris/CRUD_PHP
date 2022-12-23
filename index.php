@@ -27,14 +27,13 @@ $lista = $usuarioDAO->findAll();
 
     <div class="container">
         <h2 class="text-center">Listagem de Usuários</h2>
-        <form action="index.php">
+        <form action="pesquisar_action.php" method="POST">
             <div class="row mt-5 mb-5 text-center">
                 <div class="col">
                 <a href="adicionar.php" class="btn btn-dark">ADICIONAR USUÁRIO</a>
-                </div>
-                
+                </div>                
                 <div class="col">
-                <input type="text" class="form-control" style="width:550px;" placeholder="Digite sua pesquisa...">
+                <input type="text" name="pesquisa" class="form-control" style="width:550px;" placeholder="Digite sua pesquisa...">
                 </div>
                 <div class="col">
                     <input type="submit" class="btn btn-dark" value="Pesquisar">
@@ -60,7 +59,7 @@ $lista = $usuarioDAO->findAll();
                     <th><?= $usuario->getTelefone();?></th>
                     <th class="text-center"><?= $usuario->getStatus(); ?></th>
                     <th class="text-center">
-                        <a href="#">
+                        <a href="index.php?id=<?= $usuario->getId(); ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <img src="img/eye.png" alt="visualizar_img" style="margin-right: 5px;">
                         </a>
                         <a href="editar.php?id=<?= $usuario->getId(); ?>" style="margin-right: 5px;">
@@ -75,6 +74,52 @@ $lista = $usuarioDAO->findAll();
 
         </table>
     </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Dados Usuário</h1>                
+            </div>
+            <div class="modal-body">
+            <input type="hidden" name="id" value="<?= $usuario->getId(); ?>">
+        <div class="container mt-2">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                <input type="text" name="nome" value="<?= $usuario->getNome(); ?>" class="form-control" style="width: 100%;" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Login</label>
+                <input type="text" name="login" value="<?= $usuario->getLogin(); ?>" class="form-control" style="width: 100%;" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" name="email" value="<?= $usuario->getEmail(); ?>" class="form-control" style="width: 100%;" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Telefone</label>
+                <input type="text" required name="telefone" value="<?= $usuario->getTelefone(); ?>" class="form-control" style="width: 40%;" id="exampleFormControlInput1" maxLength="11">
+            </div>
+            <div class="mb-5">
+                <label for="exampleFormControlInput1" class="form-label">Status</label>
+                <input type="text" required name="status" value="<?= $usuario->getStatus(); ?>" class="form-control" style="width: 40%;" id="exampleFormControlInput1" maxLength="1">
+                <span class="legenda">
+                    <ul>
+                        <li>A = Ativo</li>
+                        <li>I = Inativo</li>
+                    </ul>
+                </span>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
