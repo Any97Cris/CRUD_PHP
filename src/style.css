@@ -6,3 +6,19 @@ body{
 header {
     margin: 5px;
 }
+
+
+
+/* =====//=====//==========//=====//==========//=====//==========//=====//===== 
+    Estilo página Adicionar
+*/
+
+.legenda {
+    font-size: 12px;
+    color: red;
+}
+
+.legenda ul {
+    list-style: none;
+    margin-left: -25px;
+}
