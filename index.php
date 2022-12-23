@@ -16,12 +16,29 @@ $lista = $usuarioDAO->findAll();
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Usuarios</title>
+    <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body style="background-color: #DCDCDC;">
+<body>
+
+<header>
+    <img src="img/logo_n_solucoes.png" alt="logo" style="width:90px">
+</header>
 
     <div class="container">
-        <a href="adicionar.php" class="btn btn-dark mt-5 mb-5">ADICIONAR USUÁRIO</a>
+        <div class="row mt-5 mb-5 text-center">
+            <div class="col">
+            <a href="adicionar.php" class="btn btn-dark">ADICIONAR USUÁRIO</a>
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" style="width:500px;">
+            </div>
+            <div class="col">
+                <input type="submit" class="btn btn-dark" value="Pesquisar">
+            </div>
+        
+        </div>
+        
         <table class="table table-light table-striped text-center">
             <tr>
                 <th>NOME</th>
@@ -35,12 +52,15 @@ $lista = $usuarioDAO->findAll();
                     <th><?= $usuario->getSobrenome(); ?></th>
                     <th><?= $usuario->getEmail(); ?></th>
                     <th>
+                        <a href="#">
+                            <img src="img/eye.png" alt="visualizar_img" style="margin-right: 5px;">
+                        </a>
                         <a href="editar.php?id=<?= $usuario->getId(); ?>" style="margin-right: 5px;">
                             <img src="img/edi.png" alt="editar_img">
                         </a>
                         <a href="excluir.php?id=<?= $usuario->getId(); ?>" onclick="return confirm('Tem certeza que deseja excluir?')">
                             <img src="img/del.png" alt="deleta_img">
-                        </a>
+                        </a>                        
                     </th>
                 </tr>
             <?php endforeach; ?>
