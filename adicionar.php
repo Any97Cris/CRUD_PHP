@@ -29,11 +29,11 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Telefone</label>
-                <input type="text" required name="telefone" class="form-control" style="width: 40%;" id="exampleFormControlInput1" placeholder="DDD+Número">
+                <input type="text" required name="telefone" class="form-control" style="width: 40%;" id="exampleFormControlInput1" placeholder="DDD+Número" maxLength="11">
             </div>
             <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label">Status</label>
-                <input type="text" required name="status" class="form-control" style="width: 40%;" id="exampleFormControlInput1" placeholder="Digite A ou I">
+                <input type="text" required name="status" class="form-control" style="width: 40%;" id="exampleFormControlInput1" placeholder="Digite A ou I" maxLength="1">
                 <span class="legenda">
                     <ul>
                         <li>A = Ativo</li>
