@@ -41,7 +41,7 @@ if ($usuario === false) {
                 <input type="text" name="nome" value="<?= $usuario->getNome(); ?>" class="form-control" style="width: 40%;" id="exampleFormControlInput1">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Sobrenome</label>
+                <label for="exampleFormControlInput1" class="form-label">Login</label>
                 <input type="text" name="login" value="<?= $usuario->getLogin(); ?>" class="form-control" style="width: 40%;" id="exampleFormControlInput1">
             </div>
             <div class="mb-3">
