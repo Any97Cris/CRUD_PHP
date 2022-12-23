@@ -26,32 +26,39 @@ $lista = $usuarioDAO->findAll();
 </header>
 
     <div class="container">
-        <div class="row mt-5 mb-5 text-center">
-            <div class="col">
-            <a href="adicionar.php" class="btn btn-dark">ADICIONAR USUÁRIO</a>
+        <form action="index.php">
+            <div class="row mt-5 mb-5 text-center">
+                <div class="col">
+                <a href="adicionar.php" class="btn btn-dark">ADICIONAR USUÁRIO</a>
+                </div>
+                
+                <div class="col">
+                <input type="text" class="form-control" style="width:550px;" placeholder="Digite sua pesquisa...">
+                </div>
+                <div class="col">
+                    <input type="submit" class="btn btn-dark" value="Pesquisar">
+                </div>
+                
             </div>
-            <div class="col">
-            <input type="text" class="form-control" style="width:500px;">
-            </div>
-            <div class="col">
-                <input type="submit" class="btn btn-dark" value="Pesquisar">
-            </div>
-        
-        </div>
-        
-        <table class="table table-light table-striped text-center">
+        </form>
+
+        <table class="table table-light table-striped">
             <tr>
                 <th>NOME</th>
-                <th>SOBRENOME</th>
+                <th>LOGIN</th>
                 <th>EMAIL</th>
-                <th>AÇÕES</th>
+                <th>TELEFONE</th>
+                <th class="text-center">STATUS</th>
+                <th class="text-center">AÇÕES</th>
             </tr>
             <?php foreach ($lista as $usuario) : ?>
                 <tr>
                     <th><?= $usuario->getNome(); ?></th>
-                    <th><?= $usuario->getSobrenome(); ?></th>
+                    <th><?= $usuario->getLogin(); ?></th>
                     <th><?= $usuario->getEmail(); ?></th>
-                    <th>
+                    <th><?= $usuario->getTelefone();?></th>
+                    <th class="text-center"><?= $usuario->getStatus(); ?></th>
+                    <th class="text-center">
                         <a href="#">
                             <img src="img/eye.png" alt="visualizar_img" style="margin-right: 5px;">
                         </a>
