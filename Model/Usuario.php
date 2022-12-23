@@ -4,8 +4,10 @@ class Usuario
 {
     private $id;
     private $nome;
-    private $sobrenome;
+    private $login;
     private $email;
+    private $telefone;
+    private $status;
 
 
     public function getId()
@@ -28,14 +30,14 @@ class Usuario
         $this->nome = ucwords(trim($n));
     }
 
-    public function getSobrenome()
+    public function getLogin()
     {
-        return $this->sobrenome;
+        return $this->login;
     }
 
-    public function setSobrenome($sb)
+    public function setLogin($sb)
     {
-        $this->sobrenome = ucwords(trim($sb));
+        $this->login = ucwords(trim($sb));
     }
 
     public function getEmail()
@@ -47,6 +49,24 @@ class Usuario
     {
         $this->email = strtolower(trim($em));
     }
+
+    public function getTelefone(){
+        return $this->telefone;
+    }
+
+    public function setTelefone($t){
+        $this->telefone = preg_replace("/[^0-9]/", "", $t);
+    }
+
+    public function getStatus(){
+        return $this->status;
+    }
+
+    public function setStatus($s){
+        $this->status = $s;
+    }
+
+
 }
 
 interface usuarioDAO
@@ -54,6 +74,7 @@ interface usuarioDAO
     public function add(Usuario $u);
     public function findAll();
     public function findById($id);
+    public function findByNome($nome);
     public function findByEmail($email);
     public function update(Usuario $u);
     public function delete($id);
