@@ -26,6 +26,7 @@ $lista = $usuarioDAO->findAll();
 </header>
 
     <div class="container">
+        <h2 class="text-center">Listagem de Usuários</h2>
         <form action="index.php">
             <div class="row mt-5 mb-5 text-center">
                 <div class="col">
